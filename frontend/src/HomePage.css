@@ -1,0 +1,16 @@
+/* HomePage.css */
+.homepage-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.homepage-heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.homepage-img {
+  display: block;
+  margin: 0 auto 20px;
+}
