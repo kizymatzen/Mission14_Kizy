@@ -41,16 +41,18 @@ function Movielist() {
             </tr>
           </thead>
           <tbody>
-            {listOMovies.map((m) => (
-              <tr key={m.Id}>
-                <td>{m.Title}</td>
-                <td>{m.Year}</td>
-                <td>{m.Director}</td>
-                <td>{m.Rating}</td>
-                <td>{m.Category}</td>
-                <td>{m.Edited}</td>
-              </tr>
-            ))}
+            {listOMovies
+              .filter((movie) => movie.Edited === "Yes")
+              .map((m) => (
+                <tr key={m.Id}>
+                  <td>{m.Title}</td>
+                  <td>{m.Year}</td>
+                  <td>{m.Director}</td>
+                  <td>{m.Rating}</td>
+                  <td>{m.Category}</td>
+                  <td>{m.Edited}</td>
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>
