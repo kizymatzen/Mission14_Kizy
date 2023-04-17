@@ -1,8 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using Joel_Movie.Models;
+// Add other necessary using statements
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllersWithViews();
+
+// Add the DbContext configuration
+builder.Services.AddDbContext<MovieCollectionDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("MovieCollectionConnection")));
 
 var app = builder.Build();
 
@@ -17,11 +23,10 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller}/{action=Index}/{id?}");
 
-app.MapFallbackToFile("index.html"); ;
+app.MapFallbackToFile("index.html");
 
 app.Run();

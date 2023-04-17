@@ -1,6 +1,7 @@
-import { useState } from 'react';
-import data from './MovieDataSample.json';
-import './Movies.css'; // Import custom CSS
+import { useState } from "react";
+import data from "./MovieDataSample.json";
+import "./Movies.css"; // Import custom CSS
+import React from "react";
 
 const mds = data.MovieDataSampleList;
 
@@ -12,12 +13,12 @@ function Movielist() {
       ...mds,
       {
         Id: 300,
-        Category: 'Action/Adventure',
-        Title: 'Batman',
+        Category: "Action/Adventure",
+        Title: "Batman",
         Year: 1989,
-        Director: 'Tim Burton',
-        Rating: 'PG-13',
-        Edited: 'No',
+        Director: "Tim Burton",
+        Rating: "PG-13",
+        Edited: "No",
       },
     ]);
   };
