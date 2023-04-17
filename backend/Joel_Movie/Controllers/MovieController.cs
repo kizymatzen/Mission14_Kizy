@@ -21,7 +21,7 @@ namespace Joel_Movie.Controllers
         public ActionResult<IEnumerable<Movie>> GetAllMovies()
         {
             // Filter the data to only include movies that have been edited
-            var editedMovies = _context.Movies.Where(movie => movie.IsEdited);
+            var editedMovies = _context.Movies.Where(movie => movie.Edited == "Yes");
 
             // Order the filtered data alphabetically by movie title
             var sortedMovies = editedMovies.OrderBy(movie => movie.Title);
